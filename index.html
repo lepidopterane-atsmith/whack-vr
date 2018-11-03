@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Team Codename Presents...</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script>
+      
+    </script>
+    <!-- one possible control schema: https://aframe.io/docs/0.8.0/guides/building-a-minecraft-demo.html#adding-hand-controllers -->
+  
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="tree" src="http://img.wfrcdn.com/docresources/37311/108/1089869.glb"></a-asset-item>
+        <img id="wallpaper" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fbackground%20flowers.png?1541219254076">
+        
+        <a-asset-item id="glub" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F1089869.glb?1541216592135"></a-asset-item>
+        <a-asset-item id="obj1" src="LOON3749_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="mtl1" src="LOON3749_v6_LOD2.mtl"></a-asset-item>
+        <img id="chairskin" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FBumb_1024_normal_Normal_Bump.jpg?1541220406626">
+        <img id="rug" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FTexturesCom_FloorsMarble0014_M.jpg?1541216453536">
+        
+        <a-asset-item id="sofa_obj" src="sofa.obj"></a-asset-item>
+        <a-asset-item id="sofa_mtl" src="sofa.mtl"></a-asset-item>
+        
+        <a-asset-item id="sofa" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FAchilles%20Sofa.obj?1541220669865"></a-asset-item>
+      
+      </a-assets>
+      
+      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 2.5 -2" src ="#obj1" mtl="#mtl1"></a-obj-model>
+      <a-entity scale="0.01 0.01 0.01" position="0 2.5 -2" obj-model="obj: #obj1; mtl: #mtl1"></a-entity>
+      
+      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 2.5 -2" src ="#sofa_obj" mtl="#sofa_mtl"></a-obj-model>
+      <a-entity scale="0.01 0.01 0.01" position="0 1 -4" obj-model="obj: #sofa_obj; mtl: #sofa_mtl"></a-entity>
+      <!-- "I just wanna get the skin on this thing..." ~ Sarah -->
+      
+      <!-- walls -->
+      <a-box src="#wallpaper" depth="40" height="40" width="0.5" position="15 0 4"></a-box>
+      <a-box src="#wallpaper" depth="40" height="40" width="0.5" position="-15 0 4"></a-box>
+      <a-box src="#wallpaper" depth="0.5" height="40" width="40" position="4 0 15"></a-box>
+      <a-box src="#wallpaper" depth="0.5" height="40" width="40" position="4 0 -15"></a-box>
+      
+      <!-- floor -->
+      <a-plane src="#rug" rotation="-90 0 0" height="100" width="100"></a-plane>  
+      
+      <a-sky color="#ECDDB9"></a-sky>
+    </a-scene>
+  </body>
+</html>
