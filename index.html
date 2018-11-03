@@ -8,8 +8,6 @@
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
     <script src="./js/drag-and-drop.js"></script>
 
-
-  
     <!-- one possible control schema: https://aframe.io/docs/0.8.0/guides/building-a-minecraft-demo.html#adding-hand-controllers -->
   
   </head>
@@ -27,21 +25,21 @@
         <a-asset-item id="sofa_mtl" src="sofa.mtl"></a-asset-item> 
         <a-asset-item id="sofa" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FAchilles%20Sofa.obj?1541220669865"></a-asset-item>  
       
-        <!-- Randall Armchair (uncolored) -->
-        <a-asset-item id="batch1obj1" src="SEHO1600_v6_LOD2.obj"></a-asset-item>
-        <a-asset-item id="batch1mtl1" src="SEHO1600_v6_LOD2.mtl"></a-asset-item>
+        <!-- Quinten Slipper Chair -->
+        <a-asset-item id="batch2obj1" src="MCRW1865_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch2mtl1" src="MCRW1865_v6_LOD2.mtl"></a-asset-item>
         
-        <!-- Ricardo Ladder Bookcase (uncolored) -->
-        <a-asset-item id="batch1obj2" src="EHEM1020_v6_LOD2.obj"></a-asset-item>
-        <a-asset-item id="batch1mtl2" src="EHEM1020_v6_LOD2.mtl"></a-asset-item>
+        <!-- Rutherford Ladder Bookcase -->
+        <a-asset-item id="batch2obj2" src="ZIPC1380_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch2mtl2" src="ZIPC1380_v6_LOD2.mtl"></a-asset-item>
         
-        <!-- Rockville Storage Ottoman (uncolored) -->
-        <a-asset-item id="batch1obj3" src="SIMY1021_v6_LOD2.obj"></a-asset-item>
-        <a-asset-item id="batch1mtl3" src="SIMY1021_v6_LOD2.mtl"></a-asset-item>
+        <!-- Quintus Dining Chair (get a load of this chair!!!) -->
+        <a-asset-item id="batch2obj3" src="LGLY6534_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch2mtl3" src="LGLY6534_v6_LOD2.mtl"></a-asset-item>
         
         <!-- Sabine Sleeper Loveseat (uncolored) -->
-        <a-asset-item id="batch1obj4" src="ZIPC2510_v6_LOD2.obj"></a-asset-item>
-        <a-asset-item id="batch1mtl4" src="ZIPC2510_v6_LOD2.mtl"></a-asset-item>
+        <a-asset-item id="batch1obj4" src="BRWT1400_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch1mtl4" src="BRWT1400_v6_LOD2.mtl"></a-asset-item>
         
         <!-- Silvis Coffee Table -->
         <a-asset-item id="batch1obj5" src="LFMF1830_v6_LOD2.obj"></a-asset-item>
@@ -57,13 +55,29 @@
 -->
       </a-entity>
       
-      <a-obj-model id="test1" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -12" src ="#obj1" mtl="#mtl1" dynamic-body click-drag></a-obj-model>
-      <a-obj-model id="test2" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -2" src ="#batch1obj3" mtl="#batch1obj3" dynamic-body click-drag></a-obj-model>
-      <a-obj-model id="test3" rotation = "0 90 0" scale="0.01 0.01 0.01" position="0 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
-      <a-obj-model id="test4" rotation = "0 -90 0" scale="0.01 0.01 0.01" position="3 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
-      <a-obj-model id="test5" rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch1obj2" mtl="#batch1mtl2" dynamic-body click-drag></a-obj-model> 
+      <a-obj-model id="test1" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -12" src ="#obj1" mtl="#mtl1" dynamic-body click-drag>
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 90 360" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <a-obj-model id="test2" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -2" src ="#batch2obj3" mtl="#batch2mtl3" dynamic-body click-drag>
+        <a-animation easing="linear" direction="alternate"  attribute="rotation" dur="5000" to="0 360 0" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <a-obj-model id="test3" rotation = "0 90 0" scale="0.01 0.01 0.01" position="0 -0.01 -2" src ="#batch2obj1" mtl="#batch2mtl1" dynamic-body click-drag>
+      <a-animation easing="linear" attribute="rotation" dur="20000" to="360 0 360" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <entity>
+        <a-obj-model id="test4" rotation = "0 -90 0" scale="0.01 0.01 0.01" position="3 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
+      </entity>
+      <a-obj-model id="test5" rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch2obj2" mtl="#batch2mtl2" dynamic-body click-drag></a-obj-model> 
       <a-obj-model id="test6" rotation = "0 60 0" scale="0.01 0.01 0.01" position="-4 -0.01 -10.5" src ="#batch1obj4" mtl="#batch1mtl4" dynamic-body click-drag></a-obj-model>
-      <a-obj-model id="test7" rotation = "0 -30 0" scale="0.01 0.01 0.01" position="4 -0.01 1.5" src ="#batch1obj5" mtl="#batch1mtl5" dynamic-body click-drag></a-obj-model>
+      <a-entity sound="src: url(https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fforest%20sigh%20whack.mp3?1541278893815); autoplay: true">
+         <a-obj-model id="test7" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="4 -0.01 1.5" src ="#batch1obj5" mtl="#batch1mtl5" dynamic-body click-drag></a-obj-model>
+         <a-animation property="scale" from="0.01 0.01 0.01" to="0.015 0.015 0.015" dur="3000"></a-animation>
+      </a-entity>
+    
+      
       <!-- "I just wanna get the skin on this thing..." ~ Sarah -->
       
       <!-- walls -->
@@ -100,3 +114,4 @@
       console.log('drag end', dragInfo.detail.velocity);
     });
   </script>
+
