@@ -12,7 +12,7 @@
   
   </head>
   <body>
-    <a-scene physics="debug: true;">
+    <a-scene physics>
       <a-assets>
         <img id="wallpaper" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F81f6e8d1-c891-43ef-8d08-aab8781327e8%252Fbackground%20flowers.png?1541264835165">  
         
@@ -37,7 +37,7 @@
         <a-asset-item id="batch2obj3" src="LGLY6534_v6_LOD2.obj"></a-asset-item>
         <a-asset-item id="batch2mtl3" src="LGLY6534_v6_LOD2.mtl"></a-asset-item>
         
-        <!-- Sabine Sleeper Loveseat (uncolored) -->
+        <!-- Royal Palm Beach Solid Wood Dining Chair -->
         <a-asset-item id="batch1obj4" src="BRWT1400_v6_LOD2.obj"></a-asset-item>
         <a-asset-item id="batch1mtl4" src="BRWT1400_v6_LOD2.mtl"></a-asset-item>
         
@@ -45,14 +45,20 @@
         <a-asset-item id="batch1obj5" src="LFMF1830_v6_LOD2.obj"></a-asset-item>
         <a-asset-item id="batch1mtl5" src="LFMF1830_v6_LOD2.mtl"></a-asset-item>
         
+        <!-- Scipio Ottoman (very fancy ottoman) -->
+        <a-asset-item id="batch3obj1" src="THRE3819_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch3mtl1" src="THRE3819_v6_LOD2.mtl"></a-asset-item>
+        
+        <!-- Seguin Coffee Table -->
+        <a-asset-item id="batch3obj2" src="ORNE9301_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch3mtl2" src="ORNE9301_v6_LOD2.mtl"></a-asset-item>        
+        
+        <!-- Sheryl Dinner Table -->
+        <a-asset-item id="batch3obj3" src="LGLY5881_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch3mtl3" src="LGLY5881_v6_LOD2.mtl"></a-asset-item>       
       </a-assets>
       
       <a-entity camera look-controls wasd-controls position="0 2 0">
-        <!--<a-entity rotation="-90 0 0" position="0 0 -4" id="camera" static-body="shape:sphere; sphereRadius: 0.3;">
-        </a-entity>
-        <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
-        <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
--->
       </a-entity>
       
       <a-obj-model id="test1" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -12" src ="#obj1" mtl="#mtl1" dynamic-body click-drag>
@@ -64,39 +70,57 @@
       </a-obj-model>
       
       <a-obj-model id="test3" rotation = "0 90 0" scale="0.01 0.01 0.01" position="0 -0.01 -2" src ="#batch2obj1" mtl="#batch2mtl1" dynamic-body click-drag>
-      <a-animation easing="linear" attribute="rotation" dur="20000" to="360 0 360" repeat="indefinite"></a-animation>
+        <a-animation easing="linear" attribute="rotation" dur="20000" to="360 0 360" repeat="indefinite"></a-animation>
       </a-obj-model>
       
-      <entity>
+      <a-obj-model id="test3-1" rotation = "0 90 0" scale="0.01 0.01 0.01" position="-1 2 -5" src ="#batch3obj1" mtl="#batch3mtl1" dynamic-body click-drag>
+        <a-animation easing="linear" attribute="rotation" dur="20000" to="360 0 360" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <a-entity sound="src: url(https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fwhack%20gurgly.mp3?1541280508666); autoplay: false; loop: true; volume: 1.8">
         <a-obj-model id="test4" rotation = "0 -90 0" scale="0.01 0.01 0.01" position="3 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
-      </entity>
-      <a-obj-model id="test5" rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch2obj2" mtl="#batch2mtl2" dynamic-body click-drag></a-obj-model> 
-      <a-obj-model id="test6" rotation = "0 60 0" scale="0.01 0.01 0.01" position="-4 -0.01 -10.5" src ="#batch1obj4" mtl="#batch1mtl4" dynamic-body click-drag></a-obj-model>
-      <a-entity sound="src: url(https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fforest%20sigh%20whack.mp3?1541278893815); autoplay: true">
-         <a-obj-model id="test7" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="4 -0.01 1.5" src ="#batch1obj5" mtl="#batch1mtl5" dynamic-body click-drag></a-obj-model>
+      </a-entity>
+      
+      <a-entity sound="src: url(https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fscratch%20move%20muffled.mp3?1541280500533); autoplay: true; loop: true; volume: 1">
+        <a-obj-model id="test5" rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch2obj2" mtl="#batch2mtl2" dynamic-body click-drag></a-obj-model> 
+      </a-entity>
+      
+      <a-entity>
+        <a-obj-model id="test6" rotation = "0 60 0" scale="0.01 0.01 0.01" position="-4 -0.01 -10.5" src ="#batch1obj4" mtl="#batch1mtl4" dynamic-body click-drag></a-obj-model>
+      </a-entity>
+      
+      <a-entity sound="src: url(https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fforest%20sigh%20whack.mp3?1541280508056); autoplay: false; loop: true; volume: 0.3">
+         <a-obj-model id="picnic-table" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="4 -0.01 1.5" src ="#batch1obj5" mtl="#batch1mtl5" dynamic-body click-drag></a-obj-model>
          <a-animation property="scale" from="0.01 0.01 0.01" to="0.015 0.015 0.015" dur="3000"></a-animation>
       </a-entity>
+      
+      <a-obj-model id="seguin" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="-1 2 5" src ="#batch3obj2" mtl="#batch3mtl2" dynamic-body click-drag>
+        <a-animation easing="linear" attribute="rotation" from="0 0 0" to="0 -360 -360" dur="10000" repeat="indefinite"></a-animation>
+      </a-obj-model>       
     
+      <a-obj-model id="geo" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="4 -0.01 -10.5" src ="#batch3obj3" mtl="#batch3mtl3" dynamic-body click-drag></a-obj-model>
       
       <!-- "I just wanna get the skin on this thing..." ~ Sarah -->
       
       <!-- walls -->
-      <a-box src="#wallpaper" depth="40" height="40" width="0.5" position="15 0 4"></a-box>
+      <a-box src="https://66.media.tumblr.com/482e4c96e33c442b5cd268dce898f2c1/tumblr_o65u44c7Sq1qlhvfoo2_r1_540.gif" depth="40" height="40" width="0.5" position="15 0 4"></a-box>
       <a-box src="#wallpaper" depth="40" height="40" width="0.5" position="-15 0 4"></a-box>
       <a-box src="#wallpaper" depth="0.5" height="40" width="40" position="4 0 15"></a-box>
       <a-box src="#wallpaper" depth="0.5" height="40" width="40" position="4 0 -15"></a-box>
       
       <!-- floor -->
-      <a-plane src="#rug" rotation="-90 0 0" height="100" width="100" static-body></a-plane>  
+      <a-plane src="https://images.homedepot-static.com/productImages/61ce4e04-8538-400c-990b-dfa88b32de50/svn/heritage-mill-hardwood-samples-hm-088814-64_1000.jpg" rotation="-90 0 0" height="100" width="100" static-body></a-plane>  
       
       <a-sky src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FTexturesCom_Aerials0116_M.jpg?1541264806068"></a-sky>
     </a-scene>
   </body>
 </html>
 
+<!--
 <script>
   registerAframeClickDragComponent(window.AFRAME);
 </script>
+
 
 <script>
     var draggable = document.querySelector("[click-drag]");
@@ -113,5 +137,5 @@
       draggable.body.velocity.set(x, y, z);
       console.log('drag end', dragInfo.detail.velocity);
     });
-  </script>
+  </script>-->
 
