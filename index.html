@@ -5,40 +5,65 @@
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-click-drag-component"></script>
-    <script>
-      registerAframeClickDragComponent(window.AFRAME);
-    </script>
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+    <script src="./js/drag-and-drop.js"></script>
+
+
+  
     <!-- one possible control schema: https://aframe.io/docs/0.8.0/guides/building-a-minecraft-demo.html#adding-hand-controllers -->
   
   </head>
   <body>
     <a-scene physics="debug: true;">
       <a-assets>
-        <a-asset-item id="tree" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F1089869.glb?1541263664251"></a-asset-item>
         <img id="wallpaper" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F81f6e8d1-c891-43ef-8d08-aab8781327e8%252Fbackground%20flowers.png?1541264835165">  
-        <a-asset-item id="glub" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F1089869.glb?1541216592135" response-type="arraybuffer"></a-asset-item>
+        
+        <!-- that sample table -->
         <a-asset-item id="obj1" src="MCRW5847_v6_LOD2.obj"></a-asset-item>
         <a-asset-item id="mtl1" src="MCRW5847_v6_LOD2.mtl"></a-asset-item>
+        
         <img id="rug" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F81f6e8d1-c891-43ef-8d08-aab8781327e8%252FTexturesCom_FloorsMarble0014_M.jpg?1541264834178">    
         <a-asset-item id="sofa_obj" src="sofa.obj"></a-asset-item>
         <a-asset-item id="sofa_mtl" src="sofa.mtl"></a-asset-item> 
         <a-asset-item id="sofa" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FAchilles%20Sofa.obj?1541220669865"></a-asset-item>  
+      
+        <!-- Randall Armchair (uncolored) -->
+        <a-asset-item id="batch1obj1" src="SEHO1600_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch1mtl1" src="SEHO1600_v6_LOD2.mtl"></a-asset-item>
+        
+        <!-- Ricardo Ladder Bookcase (uncolored) -->
+        <a-asset-item id="batch1obj2" src="EHEM1020_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch1mtl2" src="EHEM1020_v6_LOD2.mtl"></a-asset-item>
+        
+        <!-- Rockville Storage Ottoman (uncolored) -->
+        <a-asset-item id="batch1obj3" src="SIMY1021_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch1mtl3" src="SIMY1021_v6_LOD2.mtl"></a-asset-item>
+        
+        <!-- Sabine Sleeper Loveseat (uncolored) -->
+        <a-asset-item id="batch1obj4" src="ZIPC2510_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch1mtl4" src="ZIPC2510_v6_LOD2.mtl"></a-asset-item>
+        
+        <!-- Silvis Coffee Table -->
+        <a-asset-item id="batch1obj5" src="LFMF1830_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch1mtl5" src="LFMF1830_v6_LOD2.mtl"></a-asset-item>
+        
       </a-assets>
       
       <a-entity camera look-controls wasd-controls position="0 2 0">
         <!--<a-entity rotation="-90 0 0" position="0 0 -4" id="camera" static-body="shape:sphere; sphereRadius: 0.3;">
         </a-entity>
+        <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
+        <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
 -->
-        <a-entity laser-controls="hand: left"></a-entity>
       </a-entity>
       
-      <a-gltf-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 0.5 -2" src="#tree"></a-gltf-model>
-      
-      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 2.5 -2" src ="#obj1" mtl="#mtl1" dynamic-body click-drag></a-obj-model>
-      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="0 1.5 -2" src ="#obj1" mtl="#mtl1" dynamic-body click-drag></a-obj-model>
-            
-      <a-entity scale="0.01 0.01 0.01" position="0 0.5 -4" obj-model="obj: #sofa_obj; mtl: #sofa_mtl" dynamic-body></a-entity>
+      <a-obj-model id="test1" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -12" src ="#obj1" mtl="#mtl1" dynamic-body click-drag></a-obj-model>
+      <a-obj-model id="test2" rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.4 -0.01 -2" src ="#batch1obj3" mtl="#batch1obj3" dynamic-body click-drag></a-obj-model>
+      <a-obj-model id="test3" rotation = "0 90 0" scale="0.01 0.01 0.01" position="0 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
+      <a-obj-model id="test4" rotation = "0 -90 0" scale="0.01 0.01 0.01" position="3 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
+      <a-obj-model id="test5" rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch1obj2" mtl="#batch1mtl2" dynamic-body click-drag></a-obj-model> 
+      <a-obj-model id="test6" rotation = "0 60 0" scale="0.01 0.01 0.01" position="-4 -0.01 -10.5" src ="#batch1obj4" mtl="#batch1mtl4" dynamic-body click-drag></a-obj-model>
+      <a-obj-model id="test7" rotation = "0 -30 0" scale="0.01 0.01 0.01" position="4 -0.01 1.5" src ="#batch1obj5" mtl="#batch1mtl5" dynamic-body click-drag></a-obj-model>
       <!-- "I just wanna get the skin on this thing..." ~ Sarah -->
       
       <!-- walls -->
@@ -54,3 +79,24 @@
     </a-scene>
   </body>
 </html>
+
+<script>
+  registerAframeClickDragComponent(window.AFRAME);
+</script>
+
+<script>
+    var draggable = document.querySelector("[click-drag]");
+    console.log("Draggable: ");
+    console.log(draggable);
+    draggable.addEventListener('dragstart', function(dragInfo) {
+      draggable.components['dynamic-body'].pause();
+    });
+    draggable.addEventListener('dragend', function(dragInfo) {
+      var x = dragInfo.detail.velocity.x;
+      var y = dragInfo.detail.velocity.y;
+      var z = dragInfo.detail.velocity.z;
+      draggable.components['dynamic-body'].play();
+      draggable.body.velocity.set(x, y, z);
+      console.log('drag end', dragInfo.detail.velocity);
+    });
+  </script>
