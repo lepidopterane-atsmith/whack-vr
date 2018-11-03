@@ -13,14 +13,13 @@
   <body>
     <a-scene>
       <a-assets>
-        <a-asset-item id="tree" src="http://img.wfrcdn.com/docresources/37311/108/1089869.glb"></a-asset-item>
-        <img id="wallpaper" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fbackground%20flowers.png?1541219254076">
+        <a-asset-item id="tree" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F1089869.glb?1541263664251"></a-asset-item>
+        <img id="wallpaper" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F81f6e8d1-c891-43ef-8d08-aab8781327e8%252Fbackground%20flowers.png?1541259314601">
         
-        <a-asset-item id="glub" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F1089869.glb?1541216592135"></a-asset-item>
+        <a-asset-item id="glub" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F1089869.glb?1541216592135" response-type="arraybuffer"></a-asset-item>
         <a-asset-item id="obj1" src="LOON3749_v6_LOD2.obj"></a-asset-item>
         <a-asset-item id="mtl1" src="LOON3749_v6_LOD2.mtl"></a-asset-item>
-        <img id="chairskin" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FBumb_1024_normal_Normal_Bump.jpg?1541220406626">
-        <img id="rug" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2FTexturesCom_FloorsMarble0014_M.jpg?1541216453536">
+        <img id="rug" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2F81f6e8d1-c891-43ef-8d08-aab8781327e8%252FTexturesCom_FloorsMarble0014_M.jpg?1541259308303">
         
         <a-asset-item id="sofa_obj" src="sofa.obj"></a-asset-item>
         <a-asset-item id="sofa_mtl" src="sofa.mtl"></a-asset-item>
@@ -29,11 +28,12 @@
       
       </a-assets>
       
-      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 2.5 -2" src ="#obj1" mtl="#mtl1"></a-obj-model>
-      <a-entity scale="0.01 0.01 0.01" position="0 2.5 -2" obj-model="obj: #obj1; mtl: #mtl1"></a-entity>
+      <a-gltf-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 0.5 -2" src="#tree"></a-gltf-model>
       
-      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 2.5 -2" src ="#sofa_obj" mtl="#sofa_mtl"></a-obj-model>
-      <a-entity scale="0.01 0.01 0.01" position="0 1 -4" obj-model="obj: #sofa_obj; mtl: #sofa_mtl"></a-entity>
+      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="1.5 2.5 -2" src ="#obj1" mtl="#mtl1"></a-obj-model>
+      <a-obj-model rotation = "0 90 0" scale="0.01 0.01 0.01" position="0 1.5 -2" src ="#obj1" mtl="#mtl1"></a-obj-model>
+            
+      <a-entity scale="0.01 0.01 0.01" position="0 0.5 -4" obj-model="obj: #sofa_obj; mtl: #sofa_mtl"></a-entity>
       <!-- "I just wanna get the skin on this thing..." ~ Sarah -->
       
       <!-- walls -->
