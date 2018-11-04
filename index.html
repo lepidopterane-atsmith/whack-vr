@@ -4,9 +4,11 @@
     <title>Team Codename Presents...</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
     <script src="./js/drag-and-drop.js"></script>
+
 
     <!-- one possible control schema: https://aframe.io/docs/0.8.0/guides/building-a-minecraft-demo.html#adding-hand-controllers -->
   
@@ -56,6 +58,26 @@
         <!-- Sheryl Dinner Table -->
         <a-asset-item id="batch3obj3" src="LGLY5881_v6_LOD2.obj"></a-asset-item>
         <a-asset-item id="batch3mtl3" src="LGLY5881_v6_LOD2.mtl"></a-asset-item>       
+      
+        <!-- Sigler Cocktail Ottoman (basically a big brownie) -->
+        <a-asset-item id="batch4obj1" src="TRNT1677_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch4mtl1" src="TRNT1677_v6_LOD2.mtl"></a-asset-item>
+        
+        <!-- Simmons Upholstery Hattiesburg Sterling Sofa -->
+        <a-asset-item id="batch4obj2" src="TRPT4018_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch4mtl2" src="TRPT4018_v6_LOD2.mtl"></a-asset-item>
+       
+        <!-- Sirine Ottoman -->
+        <a-asset-item id="batch4obj3" src="LARK2659_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch4mtl3" src="LARK2659_v6_LOD2.mtl"></a-asset-item>
+
+        <!-- Smith Armchair -->
+        <a-asset-item id="batch4obj4" src="ANDO1549_v6_LOD2.obj"></a-asset-item>
+        <a-asset-item id="batch4mtl4" src="ANDO1549_v6_LOD2.mtl"></a-asset-item>
+
+        
+        <audio id="move-sound" src="https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fforest%20sigh%20whack.mp3?1541280508056" preload="auto"></audio>
+        
       </a-assets>
       
       <a-entity camera look-controls wasd-controls position="0 2 0">
@@ -81,8 +103,8 @@
         <a-obj-model id="test4" rotation = "0 -90 0" scale="0.01 0.01 0.01" position="3 -0.01 -2" src ="#batch1obj1" mtl="#batch1mtl1" dynamic-body click-drag></a-obj-model>
       </a-entity>
       
-      <a-entity sound="src: url(https://cdn.glitch.com/81f6e8d1-c891-43ef-8d08-aab8781327e8%2Fscratch%20move%20muffled.mp3?1541280500533); autoplay: true; loop: true; volume: 1">
-        <a-obj-model id="test5" rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch2obj2" mtl="#batch2mtl2" dynamic-body click-drag></a-obj-model> 
+      <a-entity id="chaise" sound="src: #move-sound; autoplay: false; loop: true; volume: 1">
+        <a-obj-model rotation = "0 0 0" scale="0.01 0.01 0.01" position="4 -0.01 -14.5" src ="#batch2obj2" mtl="#batch2mtl2" dynamic-body click-drag></a-obj-model> 
       </a-entity>
       
       <a-entity>
@@ -100,10 +122,26 @@
     
       <a-obj-model id="geo" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="4 -0.01 -10.5" src ="#batch3obj3" mtl="#batch3mtl3" dynamic-body click-drag></a-obj-model>
       
+      <a-obj-model id="4-1" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="-9 -0.01 -9.5" src ="#batch4obj1" mtl="#batch4mtl1" dynamic-body click-drag>
+        <a-animation easing="linear" direction="alternate" attribute="rotation" dur="25000" to="0 -360 0" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <a-obj-model id="4-2" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="-5 -0.01 -.5" src ="#batch4obj2" mtl="#batch4mtl2" dynamic-body click-drag>
+        <a-animation easing="linear" direction="alternate" attribute="rotation" dur="25000" to="-360 0 0" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <a-obj-model id="4-3" rotation = "0 -30 0"  scale="0.01 0.01 0.01" position="-4 -0.01 -6.5" src ="#batch4obj3" mtl="#batch4mtl3" dynamic-body click-drag>
+        <a-animation easing="linear"  attribute="rotation" direction="alternate" dur="30000" to="-360 0 0" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
+      <a-obj-model id="4-4" rotation = "0 -30 -30"  scale="0.01 0.01 0.01" position="2 -0.01 -6.5" src ="#batch4obj4" mtl="#batch4mtl4" dynamic-body click-drag>
+        <a-animation easing="linear"  attribute="position" direction="alternate" dur="2000" from= "2 5.5 -6.5" to="2 6 -6.5" repeat="indefinite"></a-animation>
+      </a-obj-model>
+      
       <!-- "I just wanna get the skin on this thing..." ~ Sarah -->
       
       <!-- walls -->
-      <a-box src="https://66.media.tumblr.com/482e4c96e33c442b5cd268dce898f2c1/tumblr_o65u44c7Sq1qlhvfoo2_r1_540.gif" depth="40" height="40" width="0.5" position="15 0 4"></a-box>
+      <a-box src="#wallpaper" depth="40" height="40" width="0.5" position="15 0 4"></a-box>
       <a-box src="#wallpaper" depth="40" height="40" width="0.5" position="-15 0 4"></a-box>
       <a-box src="#wallpaper" depth="0.5" height="40" width="40" position="4 0 15"></a-box>
       <a-box src="#wallpaper" depth="0.5" height="40" width="40" position="4 0 -15"></a-box>
@@ -120,7 +158,6 @@
 <script>
   registerAframeClickDragComponent(window.AFRAME);
 </script>
-
 
 <script>
     var draggable = document.querySelector("[click-drag]");
@@ -139,3 +176,26 @@
     });
   </script>-->
 
+<script>
+  $(document).ready(function() {
+
+    function rand_play() {
+      var entity = document.querySelector('#chaise');
+      //alert("Entity: "+entity)
+      if(entity != null) {
+        entity.components.sound.playSound();
+      }
+
+    };
+
+    function loop() {
+        var min = 5;
+        var max = 10;
+        var rand = Math.floor(Math.random() * (max - min + 1) + min);
+        rand_play();
+        set_timeout(loop, 1000 * rand);
+    }
+
+    loop();
+  });
+</script>
